@@ -5,6 +5,8 @@ if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
 }
 
+console.log(process.env);
+
 void async function main() {
   const bot = new Telegraf(process.env.BOT_TOKEN as string);
 
