@@ -5,8 +5,6 @@ if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
 }
 
-console.log(process.env);
-
 void async function main() {
   const bot = new Telegraf(process.env.BOT_TOKEN as string);
 
@@ -22,6 +20,8 @@ void async function main() {
   });
 
   await bot.launch();
+
+  console.log('> Telegram Server Started');
 
   // Enable graceful stop
   process.once('SIGINT', () => bot.stop('SIGINT'));
