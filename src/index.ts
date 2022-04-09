@@ -19,7 +19,17 @@ void async function main() {
     ctx.reply(message);
   });
 
-  await bot.launch();
+  if (process.env.NODE_ENV === 'production') {
+    await bot.launch({
+      webhook: {
+        domain: process.env.WEBHOOK_HOST,
+        hookPath: `/bot${process.env.BOT_TOKEN}`,
+        port: (process.env.PORT as unknown as number),
+      }
+    });
+  } else {
+    await bot.launch();
+  }
 
   console.log('> Telegram Server Started');
 
