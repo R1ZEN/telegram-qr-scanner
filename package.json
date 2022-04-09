@@ -1,0 +1,42 @@
+{
+  "name": "telegram-qr-scanner",
+  "version": "1.0.0",
+  "description": "Detect QR on image and extract QR info in message",
+  "main": "src/index.ts",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "scripts": {
+    "start": "ts-node src",
+    "dev": "nodemon",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/R1ZEN/telegram-qr-scanner.git"
+  },
+  "author": "Pavel Bely",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/R1ZEN/telegram-qr-scanner/issues"
+  },
+  "homepage": "https://github.com/R1ZEN/telegram-qr-scanner#readme",
+  "dependencies": {
+    "axios": "0.26.1",
+    "canvas": "2.9.1",
+    "dotenv": "16.0.0",
+    "jsqr": "1.4.0",
+    "qr-scanner": "1.4.1",
+    "telegraf": "4.7.0",
+    "ts-node": "10.7.0",
+    "typescript": "4.6.3"
+  },
+  "devDependencies": {
+    "@jest/types": "27.5.1",
+    "@types/jest": "27.4.1",
+    "jest": "27.5.1",
+    "nodemon": "2.0.15",
+    "prettier": "2.6.2",
+    "ts-jest": "27.1.4"
+  }
+}
