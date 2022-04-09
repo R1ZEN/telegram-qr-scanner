@@ -8,7 +8,7 @@ if (process.env.NODE_ENV !== 'production') {
 void async function main() {
   const bot = new Telegraf(process.env.BOT_TOKEN as string);
 
-  bot.start((ctx) => ctx.reply('Welcome'));
+  bot.start((ctx) => ctx.reply('Привет! Загрузи картинку с QR кодом'));
 
   bot.on('photo', async (ctx) => {
     const { photo } = ctx.update.message;

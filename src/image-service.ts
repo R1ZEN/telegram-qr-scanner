@@ -14,10 +14,16 @@ export class ImageService {
       const image = await loadImage(imagePath);
       ctx.drawImage(image, 0, 0);
       const img = ctx.getImageData(0, 0, width, height);
+
       const parsedQr = jsQR(img.data, width, height);
 
       if (parsedQr === null) {
-        throw new Error('Cant find QR');
+        console.error('Parse qr error');
+
+        return {
+          type: 'ERROR',
+          message: 'Не могу распознать QR код 🙄',
+        }
       }
 
       return {
@@ -29,7 +35,7 @@ export class ImageService {
 
       return {
         type: 'ERROR',
-        message: 'Не могу распознать QR код :(',
+        message: 'Не могу загрузить изображение 😔',
       }
     }
   }
